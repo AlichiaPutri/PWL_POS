@@ -15,7 +15,9 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="kodeKategori">Kode Kategori</label>
-                        <input type="text" class="form-control" id="kodeKategori" name="kodeKategori" placehold
+
+                        <input id="kategori_kode"
+                            type="text" class="form-control" id="kodeKategori" name="kodeKategori" placehold
                     </div>
                     <div class="form-group">
                         <label for="namaKategori">Nama Kategori</label>
