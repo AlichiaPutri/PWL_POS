@@ -42,7 +42,7 @@
                 <div class="form-group">
                     <strong>Username:</strong>
                     <input type="text" value= "{{ $useri->username }}" class="formcontrol" name="username"
-                        placeholder="Masukkan Nomor username"">
+                        placeholder="Masukkan Nomor username">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">

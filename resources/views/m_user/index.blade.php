@@ -17,6 +17,10 @@
     @endif
     <table class="table table-bordered">
         <tr>
+            <style type="css">
+                background-color:red;
+                color: green;
+            </style>
             <th width="20px" class="text-center">User id</th>
             <th width="150px" class="text-center">Level id</th>
             <th width="200px" class="text-center">username</th>

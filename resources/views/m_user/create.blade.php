@@ -24,6 +24,7 @@
         @csrf
 
         <div class="col-xs-12 col-sm-12 col-md-12">
+            
             <div class="form-group">
                 <strong>Username:</strong>
                 <input type="text" name="username" class="form-control" placeholder="Masukkan username"></input>
