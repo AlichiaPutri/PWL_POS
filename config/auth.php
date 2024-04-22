@@ -62,7 +62,8 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            // JS9 praktikum auth dan middleware bagian 1
+            'model' => App\Models\UserModel::class,
         ],
 
         // 'users' => [
