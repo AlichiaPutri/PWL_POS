@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\LevelController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,14 @@ Route::post('/login', App\Http\Controllers\Api\LoginController::class)->name('lo
 
 // Pengerjaan Jobsheet 10 praktikum 3 bagian 4
 Route::post('/logout', App\Http\Controllers\Api\LogoutController::class)->name('logout');
+
+// Pengerjaan Jobsheet 10 praktikum 4 bagian 3
+Route::get("levels",[LevelController::class,'index']);
+Route::post("levels",[LevelController::class,'store']);
+Route::get("levels/{level}",[LevelController::class,'show']);
+Route::put("levels/{level}",[LevelController::class,'update']);
+Route::delete("levels/{level}",[LevelController::class,'destroy']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
