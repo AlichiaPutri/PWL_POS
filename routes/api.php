@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Api\BarangController;
+use App\Http\Controllers\Api\KategoriController;
 use App\Http\Controllers\Api\LevelController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,4 +35,26 @@ Route::delete("levels/{level}",[LevelController::class,'destroy']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+// API User
+Route::get('users' , [UserController::class,'index']);
+Route::post('users' , [UserController::class,'store']);
+Route::get('users/{user}', [UserController::class,'show']);
+Route::put("users/{user}",[UserController::class,'update']);
+Route::delete("users/{user}",[UserController::class,'destroy']);
+
+// API Kategori
+Route::get('kategoris' , [KategoriController::class,'index']);
+Route::post('kategoris' , [KategoriController::class,'store']);
+Route::get('kategoris/{kategori}', [KategoriController::class,'show']);
+Route::put("kategoris/{kategori}",[KategoriController::class,'update']);
+Route::delete("kategoris/{kategori}",[KategoriController::class,'destroy']);
+
+// API Barang
+Route::get('barangs' , [BarangController::class,'index']);
+Route::post('barangs' , [BarangController::class,'store']);
+Route::get('barangs/{barang}', [BarangController::class,'show']);
+Route::put("barangs/{barang}",[BarangController::class,'update']);
+Route::delete("barangs/{barang}",[BarangController::class,'destroy']);
 
