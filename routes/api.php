@@ -3,9 +3,11 @@
 use App\Http\Controllers\Api\BarangController;
 use App\Http\Controllers\Api\KategoriController;
 use App\Http\Controllers\Api\LevelController;
+use App\Http\Controllers\Api\RegisterController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentLocatorsPass;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +60,6 @@ Route::get('barangs/{barang}', [BarangController::class,'show']);
 Route::put("barangs/{barang}",[BarangController::class,'update']);
 Route::delete("barangs/{barang}",[BarangController::class,'destroy']);
 
+Route::post('/register1',RegisterController::class)->name('register1');
+Route::get('/barang1', App\Http\Controllers\Api\BarangController::class)->name('barang1');
+Route::post('/barang', BarangController::class);
