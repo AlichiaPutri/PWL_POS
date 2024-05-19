@@ -1,10 +1,12 @@
-<?php
+<!-- <?php
 
 use App\Http\Controllers\Api\BarangController;
 use App\Http\Controllers\Api\KategoriController;
 use App\Http\Controllers\Api\LevelController;
 use App\Http\Controllers\Api\RegisterController;
+use App\Http\Controllers\Api\TransaksiController as ApiTransaksiController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\TransaksiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentLocatorsPass;
@@ -53,6 +55,12 @@ Route::get('kategoris/{kategori}', [KategoriController::class,'show']);
 Route::put("kategoris/{kategori}",[KategoriController::class,'update']);
 Route::delete("kategoris/{kategori}",[KategoriController::class,'destroy']);
 
+Route::get('/transaksi', [ApiTransaksiController::class, 'index']);
+Route::post('/transaksi', [TransaksiController::class, 'store']);
+Route::get('/transaksi/{penjualan}', [TransaksiController::class, 'show']);
+Route::put('/penjualans/{penjualan}', [TransaksiController::class, 'update']);
+Route::delete('/penjualans/{penjualan}', [TransaksiController::class, 'destroy']);
+
 // API Barang
 Route::get('barangs' , [BarangController::class,'index']);
 Route::post('barangs' , [BarangController::class,'store']);
@@ -61,5 +69,5 @@ Route::put("barangs/{barang}",[BarangController::class,'update']);
 Route::delete("barangs/{barang}",[BarangController::class,'destroy']);
 
 Route::post('/register1',RegisterController::class)->name('register1');
-Route::get('/barang1', App\Http\Controllers\Api\BarangController::class)->name('barang1');
-Route::post('/barang', BarangController::class);
+// Route::post('/barang1', App\Http\Controllers\Api\BarangController::class)->name('barang1');
+// Route::post('/barang', BarangController::class);->name('barang1');
